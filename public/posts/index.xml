@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on My Simple Hugo Website</title>
+    <link>https://chuyro.github.io/test25/posts/</link>
+    <description>Recent content in Posts on My Simple Hugo Website</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Mar 2025 13:15:00 +0100</lastBuildDate>
+    <atom:link href="https://chuyro.github.io/test25/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>https://chuyro.github.io/test25/posts/my-first-post/</link>
+      <pubDate>Fri, 14 Mar 2025 13:15:00 +0100</pubDate>
+      <guid>https://chuyro.github.io/test25/posts/my-first-post/</guid>
+      <description>&lt;h2 id=&#34;welcome-to-my-hugo-coder-website&#34;&gt;&#xD;&#xA;  Welcome to my Hugo-Coder website!&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#welcome-to-my-hugo-coder-website&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;This is my first post using the Hugo-Coder theme. It looks quite nice and clean. I&amp;rsquo;m excited to start building my website with it.&lt;/p&gt;&#xA;&lt;p&gt;Here&amp;rsquo;s a list:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Item one&lt;/li&gt;&#xA;&lt;li&gt;Item two&lt;/li&gt;&#xA;&lt;li&gt;Item three&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;And some &lt;strong&gt;bold&lt;/strong&gt; and &lt;em&gt;italic&lt;/em&gt; text.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

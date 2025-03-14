@@ -1,0 +1,32 @@
+baseURL = "https://chuyro.github.io/test25/"
+languageCode = "en-us"
+title = "My Simple Hugo Website"
+theme = "hugo-coder"
+
+[params]
+  author = "Pablo Rodriíguez Lancho" # Replace with your name
+  info = "bio/title" # Replace with your bio
+  description = "A simple website built with Hugo and the Coder theme" # Replace with your description
+  keywords = ["blog", "personal", "hugo", "coder"] # Add relevant keywords
+
+  avatarURL = "/images/avatar.jpg" # Optional: Add a path to your avatar image in the static/images folder
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
+
+# You can add more menu items as needed
+
+# Configure social media links (optional)
+[params.social]
+  # github = "your-github-username" # Replace with your GitHub username
+  # twitter = "your-twitter-handle"
+  # linkedin = "your-linkedin-username"
+  # ... add other social media links as needed
