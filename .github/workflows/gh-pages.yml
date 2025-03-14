@@ -1,4 +1,4 @@
-name: Build and Deploy Hugo Site
+name: Build and Deploy Hugo Site (Manual)
 
 on:
   push:
@@ -25,10 +25,24 @@ jobs:
         run: hugo --minify
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
-          folder: public
-          clean: false
-          force: true
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+
+          # Checkout the gh-pages branch if it exists, otherwise create it
+          git checkout --orphan gh-pages
+          git reset --hard
+
+          # Copy the contents of the public folder to the root
+          cp -r public/. .
+
+          # Remove the public directory itself
+          rm -rf public
+
+          # Add, commit, and push the changes
+          git add .
+          git commit -m "Deploy Hugo site to gh-pages"
+
+          # Push to the gh-pages branch
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git push -f origin gh-pages
