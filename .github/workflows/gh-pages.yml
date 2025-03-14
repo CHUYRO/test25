@@ -31,3 +31,4 @@ jobs:
           branch: master
           folder: public
           clean: false
+          force: true
