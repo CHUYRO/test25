@@ -1,45 +1,32 @@
-name: Deploy Hugo site to Pages
+name: Build and Deploy Hugo Site
 
 on:
   push:
     branches: [ "master" ]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           submodules: true
-      - name: Install Hugo
+
+      - name: Set up Hugo
         run: |
           wget -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.145.0/hugo_extended_0.145.0_Linux-64bit.tar.gz
           tar -xzf hugo.tar.gz
           sudo mv hugo /usr/local/bin/
           hugo version
-      - name: Build
+
+      - name: Build Hugo Site
         run: hugo --minify
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2.0.0
-        with:
-          path: ./public
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: public
